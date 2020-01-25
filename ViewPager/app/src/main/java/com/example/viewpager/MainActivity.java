@@ -1,5 +1,7 @@
 package com.example.viewpager;
 
+import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -15,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tl_tabs);
         ViewPager viewPager = (ViewPager) findViewById(R.id.vp_pager);
 
         Fragment[] arrFragments = new Fragment[3];
@@ -24,7 +28,10 @@ public class MainActivity extends AppCompatActivity {
 
         MyPagerAdapter adapter = new MyPagerAdapter(getSupportFragmentManager(), arrFragments);
         viewPager.setAdapter(adapter);
+
         // view에서 viewpager가 setAdapter을 해줌으로써 adapter와 연결됨.
+
+        tabLayout.setupWithViewPager(viewPager);
     }
 
 
@@ -46,6 +53,24 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public int getCount() { // 총 개수
             return arrFragments.length;
+        }
+
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+
+            switch (position) {
+                case 0:
+                    return "RED";
+                case 1:
+                    return "YELLOW";
+                case 2:
+                    return "BLUE";
+                default:
+                    return "";
+            }
+
+
         }
     }
 }
