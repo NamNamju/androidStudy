@@ -2,6 +2,7 @@ package com.example.listview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ArrayList<PostItem> listItem = new ArrayList<>();
-        LinearLayout llScrollParent = findViewById(R.id.li_scroll);
+        RecyclerView rvList = findViewById(R.id.rv_list);
         // 입력
         for (int i = 0; i < 5; i++) {
             PostItem item = new PostItem(true, 125,"ansta",
@@ -28,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // 데이터 추출
+       /*
        for (PostItem item : listItem) {
+
 
            // inflate -> 매우 중요한 부분
 
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
            // 데이터 넣기
 
            llScrollParent.addView(v);
-       }
+       }*/
 
 
 
