@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.listview.R;
 import com.example.listview.model.PostItem;
@@ -25,7 +26,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostViewHolder> {
     public PostViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View baseView = View.inflate(mContext, R.layout.post_item,null);
-        PostViewHolder postViewHolder = new PostViewHolder(baseView);
+        PostViewHolder postViewHolder = new PostViewHolder(baseView, this);
+        // this - > adapter추가
 
         return postViewHolder;
     }
@@ -46,4 +48,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostViewHolder> {
     public int getItemCount() {
         return postItems.size();
     }
+
+   /* public void onLikeClicked(int position) {
+        PostItem item = postItems.get(position);
+        Toast.makeText(mContext, position + " : " + item.getPostText(),Toast.LENGTH_SHORT).show();
+    }*/
 }
