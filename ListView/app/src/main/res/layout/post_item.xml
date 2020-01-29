@@ -20,11 +20,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/iv_like"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:background="#221133"/>
+        <CheckBox
+            android:id="@+id/cb_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/like_button" />
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_like"-->
+            <!--android:layout_width="24dp"-->
+            <!--android:layout_height="24dp"-->
+            <!--android:background="#221133"/>-->
 
         <TextView
             android:id="@+id/tv_likecount"
@@ -33,7 +38,7 @@
             android:text="1234"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/iv_like"/>
+            android:layout_toRightOf="@id/cb_like"/>
         
         <ImageView
             android:layout_alignParentRight="true"
