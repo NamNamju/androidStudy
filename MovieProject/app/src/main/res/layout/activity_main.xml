@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="#F7E5B7">
+
+        <ImageView
+            android:id="@+id/movie_image"
+            android:layout_width="200dp"
+            android:layout_height="250dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/movie_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/movie_image"
+            android:layout_marginTop="70dp"
+            android:layout_toRightOf="@+id/movie_image"
+            android:paddingLeft="20dp"
+            android:text="영화 제목"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/movie_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/movie_title"
+            android:layout_marginBottom="-25dp"
+            android:layout_toRightOf="@id/movie_image"
+            android:paddingLeft="20dp"
+            android:text="개봉 날짜"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/movie_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/movie_title"
+            android:layout_marginBottom="-50dp"
+            android:layout_toRightOf="@id/movie_image"
+            android:paddingLeft="20dp"
+            android:text="장르 / 시간"
+            android:textSize="20dp" />
+
+        <CheckBox
+            android:id="@+id/check_heart"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/movie_image"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toRightOf="@id/movie_image"
+
+            android:background="@drawable/heartshape"
+            android:button="#00000000"
+            android:checked="false"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <TextView
+            android:textSize="20dp"
+            android:id="@+id/like_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="220dp"
+            android:layout_toRightOf="@+id/check_heart"
+            android:text="1" />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"></RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ScrollView>
+</LinearLayout>
