@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -28,9 +29,17 @@ public class MainActivity extends AppCompatActivity {
         String text = textView.getText().toString();
         int num  = Integer.parseInt(text);
         boolean check = checkBox.isChecked();
-        if ( check == true) num++;
-        else num = 0;
-        textView.setText(""+num);
+        if ( check == true) {
+            num++;
+            textView.setText(""+num);
+            Toast.makeText(getApplicationContext(),"이 영화를 좋아합니다.",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            num = 0;
+            textView.setText(""+num);
+            Toast.makeText(getApplicationContext(),"이 영화를 좋아하지 않습니다.",Toast.LENGTH_SHORT).show();
+        }
+
 
 
     }
