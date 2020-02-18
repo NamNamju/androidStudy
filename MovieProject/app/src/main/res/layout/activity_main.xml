@@ -84,9 +84,104 @@
             android:text="1" />
     </RelativeLayout>
     
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"></RelativeLayout>
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:background="#FFB87F">
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="30dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/rating_text"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="27dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="예매율"
+                android:textSize="20dp" />
+            <TextView
+                android:id="@+id/grade"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="55dp"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:text="5위" />
+
+            <TextView
+                android:id="@+id/rate_num"
+                android:layout_toRightOf="@+id/grade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.8%"
+                android:textSize="18dp"
+                android:layout_marginTop="55dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"/>
+        </RelativeLayout>
+        <View
+            android:background="#FFA858"
+            android:layout_width="6dp"
+            android:layout_height="100dp"/>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="30dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/star_text"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="27dp"
+                android:text="평점" />
+        </RelativeLayout>
+        <View
+            android:background="#FFA858"
+            android:layout_width="6dp"
+            android:layout_height="100dp"/>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="30dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/audience_text"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="27dp"
+                android:text="누적관객수"/>
+
+            <TextView
+                android:id="@+id/audience_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="10,000"
+                android:textSize="18dp"
+                android:layout_marginTop="53dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
