@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:background="#F7E5B7">
+        android:background="#FFFFFF">
 
         <ImageView
             android:id="@+id/movie_image"
@@ -62,9 +62,8 @@
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="20dp"
             android:layout_toRightOf="@id/movie_image"
-
+            android:button="@null"
             android:background="@drawable/heartshape"
-            android:button="#00000000"
             android:checked="false"
             android:gravity="center"
             android:paddingLeft="10dp"
@@ -183,7 +182,34 @@
         </RelativeLayout>
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="#8D8D8D"/>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ScrollView>
+        android:layout_height="match_parent"
+        android:background="#FFE8B3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="줄거리"
+                android:layout_marginLeft="20dp"
+                android:textSize="30dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="25dp"
+                android:layout_marginLeft="20dp"
+                android:text="이 영화는 무슨 영화인가."/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
