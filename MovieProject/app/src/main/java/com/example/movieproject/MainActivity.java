@@ -15,8 +15,11 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
     CheckBox checkBox;
+    CheckBox checkBox1;
     TextView textView;
+    TextView textView1;
     int num = 0;
+    int num1 = 0;
 
 
     @Override
@@ -41,14 +44,19 @@ public class MainActivity extends AppCompatActivity {
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                     builder.setTitle("확인");
-                    builder.setMessage("관심 등록 하시겠습니까?");
+                    builder.setMessage("이 영화를 좋아요 하시겠습니까?");
                     builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             num++;
                             textView.setText(""+num);
-                            Toast.makeText(getApplicationContext(),"이 영화를 관심 등록합니다.",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"이 영화를 좋아요 합니다.",Toast.LENGTH_SHORT).show();
 
+                            if (checkBox1.isChecked()) {
+                                checkBox1.setChecked(false);
+                                num1--;
+
+                            }
                             //ttext.setText("이 영화를 관심 등록합니다.");
                         }
                     });
@@ -70,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                     builder.setTitle("확인");
-                    builder.setMessage("관심 해제 하시겠습니까?");
+                    builder.setMessage("이 영화를 좋아요 해제 하시겠습니까?");
                     builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -80,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
                             textView.setText(""+num);
                             //ttext.setText("이 영화를 관심 해제합니다.");
-                            Toast.makeText(getApplicationContext(),"이 영화를 관심 해제합니다.",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"이 영화를 좋아요 해제합니다.",Toast.LENGTH_SHORT).show();
 
 
 
@@ -101,6 +109,90 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        checkBox1 = findViewById(R.id.uncheck_heart);
+        checkBox1.setOnClickListener(new CheckBox.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                textView1 = findViewById(R.id.unlike_number);
+                String text = textView1.getText().toString();
+                num1  = Integer.parseInt(text);
+                //LayoutInflater inflater = getLayoutInflater();
+                //View layout = inflater.inflate(R.layout.toastlayout,(ViewGroup)findViewById(R.id.toastLayout));
+                //TextView ttext = layout.findViewById(R.id.textview);
+
+                if (checkBox1.isChecked()) {
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                    builder.setTitle("확인");
+                    builder.setMessage("이 영화를 싫어요 하시겠습니까?");
+                    builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            num1++;
+                            textView1.setText(""+num1);
+                            Toast.makeText(getApplicationContext(),"이 영화를 싫어요 합니다.",Toast.LENGTH_SHORT).show();
+
+                            if (checkBox.isChecked()) {
+                                checkBox.setChecked(false);
+                                num--;
+
+                            }
+                            //ttext.setText("이 영화를 관심 등록합니다.");
+                        }
+                    });
+
+                    builder.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+
+
+                }
+
+                else {
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                    builder.setTitle("확인");
+                    builder.setMessage("이 영화를 싫어요 해제 하시겠습니까?");
+                    builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            if (num1 > 0) num1--;
+                            else num1 = 0;
+
+                            textView1.setText(""+num1);
+                            //ttext.setText("이 영화를 관심 해제합니다.");
+                            Toast.makeText(getApplicationContext(),"이 영화를 싫어요 해제합니다.",Toast.LENGTH_SHORT).show();
+
+
+
+                        }
+                    });
+
+                    builder.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+
+                }
+
+            }
+        });
+
     }
 
     public void onCheck(View v) {
