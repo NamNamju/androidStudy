@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:background="#FFFFFF">
+        android:background="#6CCFFF">
 
         <ImageView
             android:id="@+id/movie_image"
@@ -73,15 +73,46 @@
             android:visibility="visible"
             tools:visibility="visible" />
 
+
         <TextView
-            android:textSize="20dp"
             android:id="@+id/like_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="220dp"
             android:layout_toRightOf="@+id/check_heart"
-            android:text="0" />
+            android:text="0"
+            android:textSize="20dp" />
+
+        <CheckBox
+            android:id="@+id/uncheck_heart"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/movie_image"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toRightOf="@id/like_number"
+            android:background="@drawable/unheartshape"
+            android:button="@null"
+            android:checked="false"
+            android:gravity="center"
+            android:onClick="onCheck"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/unlike_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="220dp"
+            android:layout_toRightOf="@+id/uncheck_heart"
+            android:text="0"
+            android:textSize="20dp" />
+
     </RelativeLayout>
     
     <LinearLayout
