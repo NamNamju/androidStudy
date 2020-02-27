@@ -28,14 +28,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         checkBox = findViewById(R.id.check_heart);
+        textView = findViewById(R.id.like_number);
+        String text = textView.getText().toString();
+        num  = Integer.parseInt(text);
+        ////////////////////////////////
+
+        textView1 = findViewById(R.id.unlike_number);
+        String text1 = textView1.getText().toString();
+        num1  = Integer.parseInt(text1);
+
         checkBox.setOnClickListener(new CheckBox.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-                textView = findViewById(R.id.like_number);
-                String text = textView.getText().toString();
-                num  = Integer.parseInt(text);
                 //LayoutInflater inflater = getLayoutInflater();
                 //View layout = inflater.inflate(R.layout.toastlayout,(ViewGroup)findViewById(R.id.toastLayout));
                 //TextView ttext = layout.findViewById(R.id.textview);
@@ -52,9 +58,11 @@ public class MainActivity extends AppCompatActivity {
                             textView.setText(""+num);
                             Toast.makeText(getApplicationContext(),"이 영화를 좋아요 합니다.",Toast.LENGTH_SHORT).show();
 
+
                             if (checkBox1.isChecked()) {
-                                checkBox1.setChecked(false);
                                 num1--;
+                                textView1.setText(""+num1);
+                                checkBox1.setChecked(false);
 
                             }
                             //ttext.setText("이 영화를 관심 등록합니다.");
@@ -116,9 +124,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                textView1 = findViewById(R.id.unlike_number);
-                String text = textView1.getText().toString();
-                num1  = Integer.parseInt(text);
+//                textView1 = findViewById(R.id.unlike_number);
+//                String text = textView1.getText().toString();
+//                num1  = Integer.parseInt(text);
                 //LayoutInflater inflater = getLayoutInflater();
                 //View layout = inflater.inflate(R.layout.toastlayout,(ViewGroup)findViewById(R.id.toastLayout));
                 //TextView ttext = layout.findViewById(R.id.textview);
@@ -132,12 +140,15 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             num1++;
+
                             textView1.setText(""+num1);
                             Toast.makeText(getApplicationContext(),"이 영화를 싫어요 합니다.",Toast.LENGTH_SHORT).show();
 
                             if (checkBox.isChecked()) {
-                                checkBox.setChecked(false);
                                 num--;
+                                textView.setText(""+num);
+                                checkBox.setChecked(false);
+
 
                             }
                             //ttext.setText("이 영화를 관심 등록합니다.");
