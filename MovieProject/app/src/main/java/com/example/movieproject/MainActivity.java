@@ -7,11 +7,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     CheckBox checkBox;
@@ -20,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView1;
     int num = 0;
     int num1 = 0;
+    ListView listView;
 
 
     @Override
@@ -36,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
         textView1 = findViewById(R.id.unlike_number);
         String text1 = textView1.getText().toString();
         num1  = Integer.parseInt(text1);
+
+        ///////////////////////////////
+
+
 
         checkBox.setOnClickListener(new CheckBox.OnClickListener() {
             @Override
@@ -204,39 +214,55 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
+        //////////////////////////////////////////////
 
-    public void onCheck(View v) {
+        listView = (ListView) findViewById(R.id.listView);
+        ReviewAdapter adapter = new ReviewAdapter();
+        adapter.addItem(new ReviewItem("kkk123","좋아요",R.drawable.user1));
+        adapter.addItem(new ReviewItem("adw123","진짜 별로에요",R.drawable.user1));
+        adapter.addItem(new ReviewItem("wke132","이 영화를 본 시간이 아깝다.",R.drawable.user1));
+        adapter.addItem(new ReviewItem("kd2kal3","쓰레기 같은 영화",R.drawable.user1));
+        adapter.addItem(new ReviewItem("whatthe1","저는 감독을 좋아해서 잘 봤어요.",R.drawable.user1));
 
-
-
-        /*checkBox.setOnClickListener(new CheckBox.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                textView = findViewById(R.id.like_number);
-                String text = textView.getText().toString();
-                int num  = Integer.parseInt(text);
-                boolean check = checkBox.isChecked();
-                LayoutInflater inflater = getLayoutInflater();
-                View layout = inflater.inflate(R.layout.toastlayout,(ViewGroup)findViewById(R.id.toastLayout));
-                TextView ttext = layout.findViewById(R.id.textview);
-                if (check == true) {
-                    num++;
-                    textView.setText(""+num);
-
-                    ttext.setText("이 영화를 관심 등록합니다.");
-
-                }
-                else {
-                    num=0;
-                    textView.setText(""+num);
-                    ttext.setText("이 영화를 관심 해제합니다.");
-                }
-                Toast toast = new Toast(getApplicationContext());
-                toast.setView(layout);
-                toast.show();
-            }
-        });*/
+        listView.setAdapter(adapter);
 
     }
+
+    class ReviewAdapter extends BaseAdapter {
+
+        ArrayList<ReviewItem> items = new ArrayList<ReviewItem>();
+
+        @Override
+        public int getCount() {
+            return items.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return items.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        public void addItem (ReviewItem item) {
+            items.add(item);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            ReviewItemAdapter view = new ReviewItemAdapter(getApplicationContext());
+            ReviewItem item = items.get(position);
+            view.setTextView1(item.getId());
+            view.setTextView2(item.getMoviereview());
+            view.setImageView(item.getResimg());
+            return view;
+        }
+    }
+
+
+
 }
