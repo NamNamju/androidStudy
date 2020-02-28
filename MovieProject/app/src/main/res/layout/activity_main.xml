@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         android:background="#6CCFFF">
 
         <ImageView
@@ -66,7 +66,6 @@
             android:button="@null"
             android:checked="false"
             android:gravity="center"
-            android:onClick="onCheck"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:paddingBottom="10dp"
@@ -96,7 +95,6 @@
             android:button="@null"
             android:checked="false"
             android:gravity="center"
-            android:onClick="onCheck"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:paddingBottom="10dp"
@@ -220,7 +218,7 @@
         android:background="#8D8D8D"/>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="80dp"
         android:background="#FFE8B3">
 
         <LinearLayout
@@ -243,5 +241,36 @@
                 android:layout_marginLeft="20dp"
                 android:text="이 영화는 무슨 영화인가."/>
         </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#090605"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20dp"
+                android:text="한줄평"/>
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+            </ListView>
+
+        </LinearLayout>
+
     </ScrollView>
 </LinearLayout>
