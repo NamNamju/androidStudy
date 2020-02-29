@@ -10,27 +10,28 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="#6CCFFF">
+        android:background="#3A3A3A">
 
         <ImageView
             android:id="@+id/movie_image"
-            android:layout_width="200dp"
-            android:layout_height="250dp"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:scaleType="centerCrop"
-            tools:srcCompat="@mipmap/ic_launcher" />
+            tools:srcCompat="@drawable/image11" />
 
         <TextView
             android:id="@+id/movie_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/movie_image"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/movie_image"
             android:paddingLeft="20dp"
-            android:text="영화 제목"
-            android:textSize="30dp" />
+            android:text="군도"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp" />
 
         <TextView
             android:id="@+id/movie_date"
@@ -41,7 +42,7 @@
             android:layout_toRightOf="@id/movie_image"
             android:paddingLeft="20dp"
             android:text="개봉 날짜"
-            android:textSize="20dp" />
+            android:textSize="13dp" />
 
         <TextView
             android:id="@+id/movie_time"
@@ -52,21 +53,20 @@
             android:layout_toRightOf="@id/movie_image"
             android:paddingLeft="20dp"
             android:text="장르 / 시간"
-            android:textSize="20dp" />
+            android:textSize="13dp" />
 
         <CheckBox
             android:id="@+id/check_heart"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_alignBottom="@+id/movie_image"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginBottom="20dp"
             android:layout_toRightOf="@id/movie_image"
             android:background="@drawable/heartshape"
             android:button="@null"
             android:checked="false"
             android:gravity="center"
-            android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:paddingBottom="10dp"
             android:visibility="visible"
@@ -78,24 +78,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="123dp"
             android:layout_toRightOf="@+id/check_heart"
             android:text="0"
             android:textSize="20dp" />
 
         <CheckBox
             android:id="@+id/uncheck_heart"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_alignBottom="@+id/movie_image"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginBottom="20dp"
             android:layout_toRightOf="@id/like_number"
             android:background="@drawable/unheartshape"
             android:button="@null"
             android:checked="false"
             android:gravity="center"
-            android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:paddingBottom="10dp"
             android:visibility="visible"
@@ -105,8 +104,8 @@
             android:id="@+id/unlike_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="220dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="123dp"
             android:layout_toRightOf="@+id/uncheck_heart"
             android:text="0"
             android:textSize="20dp" />
@@ -115,9 +114,9 @@
     
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:orientation="horizontal"
-        android:background="#FFB87F">
+        android:background="#818181">
 
         <RelativeLayout
             android:layout_weight="1"
@@ -130,7 +129,7 @@
 
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_margin="27dp"
+                android:layout_margin="24dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -138,16 +137,15 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:text="예매율"
-                android:textSize="20dp" />
+                android:textSize="15dp" />
             <TextView
                 android:id="@+id/grade"
                 android:layout_width="wrap_content"
 
                 android:layout_height="wrap_content"
-
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="55dp"
-                android:textSize="18dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="45dp"
+                android:textSize="15dp"
                 android:textStyle="bold"
                 android:text="5위" />
 
@@ -157,32 +155,45 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1.8%"
-                android:textSize="18dp"
-                android:layout_marginTop="55dp"
+                android:textSize="15dp"
+                android:layout_marginTop="45dp"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"/>
         </RelativeLayout>
         <View
-            android:background="#FFA858"
-            android:layout_width="6dp"
+            android:background="#000000"
+            android:layout_width="1dp"
             android:layout_height="100dp"/>
         <RelativeLayout
             android:layout_weight="1"
-            android:layout_width="30dp"
+            android:layout_width="25dp"
             android:layout_height="match_parent">
             <TextView
                 android:id="@+id/star_text"
                 android:layout_width="wrap_content"
 
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:layout_margin="27dp"
                 android:text="평점" />
+            
+            <RatingBar
+                style="?android:attr/ratingBarStyleSmall"
+                android:rating="3"
+                android:max="5"
+                android:stepSize="0.5"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:id="@+id/star"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </RelativeLayout>
         <View
-            android:background="#FFA858"
-            android:layout_width="6dp"
+            android:background="#0C0600"
+            android:layout_width="1dp"
             android:layout_height="100dp"/>
         <RelativeLayout
             android:layout_weight="1"
@@ -193,9 +204,9 @@
                 android:layout_width="wrap_content"
 
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="27dp"
+                android:textSize="15dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="25dp"
                 android:text="누적관객수"/>
 
             <TextView
@@ -204,8 +215,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:text="10,000"
-                android:textSize="18dp"
-                android:layout_marginTop="53dp"
+                android:textSize="15dp"
+                android:layout_marginTop="45dp"
                 android:textStyle="bold" />
 
 
@@ -214,12 +225,13 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="6dp"
-        android:background="#8D8D8D"/>
+        android:layout_height="2dp"
+        android:background="#363636"/>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="#FFE8B3">
+        android:layout_height="140dp"
+        android:fillViewport="true"
+        android:background="#5C5C5C">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -228,39 +240,49 @@
             >
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="35dp"
                 android:text="줄거리"
                 android:layout_marginLeft="20dp"
-                android:textSize="30dp"
+                android:textSize="20dp"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold"/>
             <TextView
+                android:lineSpacingMultiplier="1.5"
+                android:textColor="#FFFFFF"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="25dp"
+                android:textSize="10dp"
                 android:layout_marginLeft="20dp"
-                android:text="이 영화는 무슨 영화인가."/>
+                android:text="군도, 백성을 구하라!\n양반과 탐관오리들의 착취가 극에 달했던 조선 철종 13년. 힘 없는 백성의 편이 되어\n세상을 바로잡고자 하는 의적떼인 군도(群盜), 지리산 추설이 있었다.\n
+ \n쌍칼 도치 vs 백성의 적 조윤\n잦은 자연재해, 기근과 관의 횡포까지 겹쳐 백성들의 삶이 날로 피폐해 져 가는 사이,\n나주 대부호의 서자로 조선 최고의 무관 출신인 조윤은 극악한 수법으로 양민들을 수탈,\m삼남지방 최고의 대부호로 성장한다. 한편 소, 돼지를 잡아 근근이 살아가던 천한 백정 돌무치는\n죽어도 잊지 못할 끔찍한 일을 당한 뒤 군도에 합류. 지리산 추설의 신 거성(新 巨星) 도치로 거듭난다.\n
+\n뭉치면 백성, 흩어지면 도적!\n망할 세상을 뒤집기 위해, 백성이 주인인 새 세상을 향해 도치를 필두로 한 군도는 백성의 적,\n조윤과 한 판 승부를 시작하는데...\n
+\n"/>
         </LinearLayout>
     </ScrollView>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
         android:background="#090605"/>
 
     <ScrollView
+        android:background="#686868"
         android:layout_width="match_parent"
-        android:layout_height="160dp">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="35dp"
+                android:text="한 줄 평"
+                android:layout_marginLeft="20dp"
                 android:textSize="20dp"
-                android:text="한줄평"/>
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"/>
 
             <ListView
                 android:id="@+id/listView"
