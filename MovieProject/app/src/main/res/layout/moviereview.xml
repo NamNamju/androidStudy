@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#686868">
 
     <ImageView
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:id="@+id/char_image"
         android:layout_width="40dp"
@@ -18,8 +19,9 @@
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:text="kkk9021"
+        android:layout_marginTop="10dp"
         android:layout_toRightOf="@id/char_image"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="17dp"
         />
 
     <TextView
@@ -29,7 +31,7 @@
         android:textSize="20dp"
         android:text="별로에요."
         android:layout_toRightOf="@id/char_image"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="17dp"
         android:layout_marginTop="40dp"
         />
 
